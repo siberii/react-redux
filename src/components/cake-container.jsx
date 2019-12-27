@@ -2,7 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { buyCake } from '../redux';
 
-export function CakeContainer(props) {
+function CakeContainer(props) {
     return (
         <div>
             <h2>Number of cakes - {props.nCakes} </h2>
@@ -12,9 +12,18 @@ export function CakeContainer(props) {
 };
 
 // Selectors (usually in a seperate file)
-const mapStateToProps = state => { nCakes: state.nCakes };
+const mapStateToProps = state => {
+    return { 
+        nCakes: state.nCakes };
+};
 
-const mapDispatchToProps = dispatch => { buyCake: () => dispatch(buyCake()) }
+const mapDispatchToProps = dispatch => {
+    return {
+        buyCake: () => dispatch(buyCake())
+    };
+};
 
-export function connect(mapStateToProps, mapDispatchToProps)
-(CakeContainer);
+export default connect(
+    mapStateToProps,
+    mapDispatchToProps
+)(CakeContainer);
