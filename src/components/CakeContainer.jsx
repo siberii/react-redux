@@ -13,8 +13,9 @@ function CakeContainer(props) {
 
 // Selectors (usually in a seperate file)
 const mapStateToProps = state => {
-    return { 
-        nCakes: state.nCakes };
+    return {
+        nCakes: state.nCakes 
+    };
 };
 
 const mapDispatchToProps = dispatch => {
