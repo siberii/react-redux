@@ -1,12 +1,12 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { buyCake } from '../redux';
+import { buyIceCream } from '../redux';
 
-function CakeContainer(props) {
+function IceCreamContainer(props) {
     return (
         <div>
-            <h2>Number of cakes - {props.nCakes} </h2>
-            <button onClick={props.buyCake}>Buy Cake</button>
+            <h2>Number of Icecream - {props.nIceCreams} </h2>
+            <button onClick={props.buyIceCream}>Buy Icecream</button>
         </div>
     );
 };
@@ -14,17 +14,17 @@ function CakeContainer(props) {
 // Selectors (usually in a seperate file)
 const mapStateToProps = state => {
     return {
-        nCakes: state.cake.nCakes 
+        nIceCreams: state.iceCream.nIceCreams 
     };
 };
 
 const mapDispatchToProps = dispatch => {
     return {
-        buyCake: () => dispatch(buyCake())
+        buyIceCream: () => dispatch(buyIceCream())
     };
 };
 
 export default connect(
     mapStateToProps,
     mapDispatchToProps
-)(CakeContainer);
+)(IceCreamContainer);
